@@ -1,0 +1,2 @@
+# GeoAI
+Geometric AI model
