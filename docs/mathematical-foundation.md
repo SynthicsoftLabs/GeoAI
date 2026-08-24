@@ -82,7 +82,7 @@ $$\mathcal{T}_{g}Q(s,a)=\mathbb{E}\left[r(s,a)+\Gamma_{g}[\gamma_{s,a}]\max_{a'}
 
 The optimal fixed point is
 
-$$Q^{*}=\mathcal{T}_{g}Q^{*}.$$
+$$Q^{\ast}=\mathcal{T}_{g}Q^{\ast}.$$
 
 ## 6. Closed-loop Bellman equation
 
@@ -120,12 +120,12 @@ with geometry $g$ determining proper time, proper time determining discount, and
 
 The computational objective is
 
-$$Q^{*}=\operatorname{Fix}(\mathcal{T}_{g}).$$
+$$Q^{\ast}=\operatorname{Fix}(\mathcal{T}_{g}).$$
 
 For a CTC learning environment, the coupled system is
 
-$$Q^{*}=\mathcal{T}_{g}Q^{*},$$
+$$Q^{\ast}=\mathcal{T}_{g}Q^{\ast},$$
 
 alongside the loop state-consistency equation
 
-$$\mathcal{I}^{*}=F_{C}(\mathcal{I}^{*},\mathbf{a},\boldsymbol{\epsilon}).$$
+$$\mathcal{I}^{\ast}=F_{C}(\mathcal{I}^{\ast},\mathbf{a},\boldsymbol{\epsilon}).$$
