@@ -36,7 +36,7 @@ $$\mathcal{T}_{g}Q(s,a)=\mathbb{E}\left[r(s,a)+\Gamma[\gamma_{s,a}]\max_{a'}Q(s'
 
 The optimal value satisfies
 
-$$Q^{*}=\mathcal{T}_{g}Q^{*}.$$
+$$Q^{\ast}=\mathcal{T}_{g}Q^{\ast}.$$
 
 For a closed timelike learning loop with total proper time $\tau_{C}$ and loop reward $R_{C}$,
 
