@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geoai"
+version = "0.1.0"
+description = "Geometric reinforcement learning on Lorentzian spacetime"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Adam J. Rivers, Synthicsoft Labs"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "sympy>=1.12"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
