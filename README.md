@@ -6,11 +6,11 @@ GeoAI is a research and computational framework for reinforcement learning whose
 
 The reference spacetime is the Gödel universe:
 
-$$ds^2=-(dt+e^x dz)^2+dx^2+dy^2+\frac12e^{2x}dz^2.$$
+$$ds^{2}=-(dt+e^{x}dz)^{2}+dx^{2}+dy^{2}+\frac{1}{2}e^{2x}dz^{2}.$$
 
 The metric tensor is
 
-$$g_{\mu\nu}=\begin{pmatrix}-1&0&0&-e^x\\0&1&0&0\\0&0&1&0\\-e^x&0&0&-\frac12e^{2x}\end{pmatrix}.$$
+$$g_{\mu\nu}=\begin{pmatrix}-1&0&0&-e^{x}\\0&1&0&0\\0&0&1&0\\-e^{x}&0&0&-\frac{1}{2}e^{2x}\end{pmatrix}.$$
 
 Its inverse is
 
@@ -18,33 +18,33 @@ $$g^{\mu\nu}=\begin{pmatrix}1&0&0&-2e^{-x}\\0&1&0&0\\0&0&1&0\\-2e^{-x}&0&0&2e^{-
 
 The determinant and volume density are
 
-$$\det g=-\frac12e^{2x},\qquad\sqrt{-g}=\frac{e^x}{\sqrt2}.$$
+$$\det(g)=-\frac{1}{2}e^{2x},\qquad\sqrt{-g}=\frac{e^{x}}{\sqrt{2}}.$$
 
 ## Geometric discount
 
-For a timelike trajectory $x^\mu(\lambda)$,
+For a timelike trajectory $x^{\mu}(\lambda)$,
 
-$$d\tau=\sqrt{-g_{\mu\nu}\dot x^\mu\dot x^\nu}\,d\lambda.$$
+$$d\tau=\sqrt{-g_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}}\,d\lambda.$$
 
 GeoAI defines
 
-$$\Gamma[\gamma]=\exp\left(-\kappa\int_\gamma d\tau\right),$$
+$$\Gamma[\gamma]=\exp\left(-\kappa\int_{\gamma}d\tau\right),$$
 
 and the geometric Bellman operator
 
-$$\mathcal T_gQ(s,a)=\mathbb E\left[r(s,a)+\Gamma[\gamma_{s,a}]\max_{a'}Q(s',a')\right].$$
+$$\mathcal{T}_{g}Q(s,a)=\mathbb{E}\left[r(s,a)+\Gamma[\gamma_{s,a}]\max_{a'}Q(s',a')\right].$$
 
 The optimal value satisfies
 
-$$Q^*=\mathcal T_g Q^*.$$
+$$Q^{*}=\mathcal{T}_{g}Q^{*}.$$
 
-For a closed timelike learning loop with total proper time $\tau_C$ and loop reward $R_C$,
+For a closed timelike learning loop with total proper time $\tau_{C}$ and loop reward $R_{C}$,
 
-$$Q_C=R_C+e^{-\kappa\tau_C}Q_C,$$
+$$Q_{C}=R_{C}+e^{-\kappa\tau_{C}}Q_{C},$$
 
 so
 
-$$Q_C=\frac{R_C}{1-e^{-\kappa\tau_C}}.$$
+$$Q_{C}=\frac{R_{C}}{1-e^{-\kappa\tau_{C}}}.$$
 
 ## Repository
 
@@ -71,4 +71,4 @@ GeoAI treats the spacetime metric as a first-class component of the learning env
 
 ## License
 
-MIT License.
+Apache License 2.0.
