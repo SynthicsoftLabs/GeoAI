@@ -71,4 +71,4 @@ GeoAI treats the spacetime metric as a first-class component of the learning env
 
 ## License
 
-Apache License 2.0.
+MIT License.
