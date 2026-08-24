@@ -10,22 +10,52 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: geoai-validation-${{ github.ref }}
+  group: geoai-autonomous-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  autonomous-repair:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run autonomous repair
+        run: python scripts/autonomous_repair.py
+      - name: Commit autonomous repairs
+        run: |
+          git config user.name "GeoAI Autonomous Agent"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No autonomous repair changes required."
+          else
+            git commit -m "chore: autonomous repository repair"
+            git push origin HEAD:main
+          fi
+
   validate:
+    if: always() && (github.event_name == 'pull_request' || needs.autonomous-repair.result == 'success')
+    needs: autonomous-repair
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
     steps:
-      - name: Checkout
+      - name: Checkout repaired main
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.sha || 'main' }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -43,11 +73,13 @@ jobs:
         run: python -m geoai.validation
 
   package:
-    runs-on: ubuntu-latest
     needs: validate
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
