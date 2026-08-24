@@ -36,7 +36,7 @@ $$\mathcal T_gQ(s,a)=\mathbb E\left[r(s,a)+\Gamma[\gamma_{s,a}]\max_{a'}Q(s',a')
 
 The optimal value satisfies
 
-$$Q^*=\mathcal T_gQ^*.$$
+$$Q^*=\mathcal T_g Q^*.$$
 
 For a closed timelike learning loop with total proper time $\tau_C$ and loop reward $R_C$,
 
@@ -71,4 +71,4 @@ GeoAI treats the spacetime metric as a first-class component of the learning env
 
 ## License
 
-MIT License.
+Apache License 2.0.
