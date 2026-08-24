@@ -26,7 +26,7 @@ $$\sqrt{-g}=\frac{e^{x}}{\sqrt{2}}.$$
 
 For $x^{\mu}(\lambda)$,
 
-$$\frac{ds^{2}}{d\lambda^{2}}=g_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}.$$
+$$\frac{ds^{2}}{d\lambda^{2}}=g_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}.$$ 
 
 A timelike tangent satisfies
 
@@ -34,7 +34,7 @@ $$g_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}<0,$$
 
 and its proper-time density is
 
-$$\frac{d\tau}{d\lambda}=\sqrt{-g_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}}.$$
+$$\frac{d\tau}{d\lambda}=\sqrt{-g_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}}.$$ 
 
 ## 3. Matter solution
 
@@ -44,11 +44,11 @@ $$T_{\mu\nu}=\rho u_{\mu}u_{\nu},$$
 
 with
 
-$$u^{\mu}u_{\mu}=-1.$$
+$$u^{\mu}u_{\mu}=-1.$$ 
 
 Einstein's equation is
 
-$$G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G T_{\mu\nu}.$$
+$$G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G T_{\mu\nu}.$$ 
 
 For the Gödel normalization, the dust density, cosmological constant, and rotation scale are related by the standard Gödel solution relations. In physical units, a length/time scale is restored by multiplying the line element by the appropriate constant scale factor.
 
@@ -62,7 +62,7 @@ $$\sinh^{2}\left(\frac{r}{\sqrt{2}a}\right)=1,$$
 
 or equivalently
 
-$$r_{c}=\sqrt{2}\,a\,\operatorname{arsinh}(1)=\sqrt{2}\,a\ln(1+\sqrt{2}).$$
+$$r_{c}=\sqrt{2}\,a\,\mathrm{arsinh}(1)=\sqrt{2}\,a\ln(1+\sqrt{2}).$$
 
 This cylindrical construction is the CTC geometry used by GeoAI's closed-loop experiments.
 
@@ -74,7 +74,7 @@ $$\Delta\tau_{g}[\gamma]=\int_{\gamma}d\tau,$$
 
 and
 
-$$\Gamma_{g}[\gamma]=e^{-\kappa\Delta\tau_{g}[\gamma]}.$$
+$$\Gamma_{g}[\gamma]=e^{-\kappa\Delta\tau_{g}[\gamma]}.$$ 
 
 The Bellman operator is
 
@@ -82,17 +82,17 @@ $$\mathcal{T}_{g}Q(s,a)=\mathbb{E}\left[r(s,a)+\Gamma_{g}[\gamma_{s,a}]\max_{a'}
 
 The optimal fixed point is
 
-$$Q^{\ast}=\mathcal{T}_{g}Q^{\ast}.$$
+$$Q^{\ast}=\mathcal{T}_{g}Q^{\ast}.$$ 
 
 ## 6. Closed-loop Bellman equation
 
 For a closed trajectory $C$ with loop reward $R_{C}$ and total proper time $\tau_{C}$,
 
-$$Q_{C}=R_{C}+e^{-\kappa\tau_{C}}Q_{C}.$$
+$$Q_{C}=R_{C}+e^{-\kappa\tau_{C}}Q_{C}.$$ 
 
 Therefore
 
-$$Q_{C}=\frac{R_{C}}{1-e^{-\kappa\tau_{C}}}.$$
+$$Q_{C}=\frac{R_{C}}{1-e^{-\kappa\tau_{C}}}.$$ 
 
 The loop transforms recursive temporal valuation into a self-consistency equation.
 
@@ -100,15 +100,15 @@ The loop transforms recursive temporal valuation into a self-consistency equatio
 
 For a reward rate $r(\tau)$,
 
-$$\frac{dQ}{d\tau}=-\kappa Q+r(\tau).$$
+$$\frac{dQ}{d\tau}=-\kappa Q+r(\tau).$$ 
 
 Its solution is
 
-$$Q(\tau)=e^{-\kappa\tau}\left[Q(0)+\int_{0}^{\tau}e^{\kappa u}r(u)\,du\right].$$
+$$Q(\tau)=e^{-\kappa\tau}\left[Q(0)+\int_{0}^{\tau}e^{\kappa u}r(u)\,du\right].$$ 
 
 The closed condition $Q(\tau_{C})=Q(0)$ gives
 
-$$Q(0)=\frac{\int_{0}^{\tau_{C}}e^{-\kappa(\tau_{C}-u)}r(u)\,du}{1-e^{-\kappa\tau_{C}}}.$$
+$$Q(0)=\frac{\int_{0}^{\tau_{C}}e^{-\kappa(\tau_{C}-u)}r(u)\,du}{1-e^{-\kappa\tau_{C}}}.$$ 
 
 ## 8. Learning system
 
@@ -120,7 +120,7 @@ with geometry $g$ determining proper time, proper time determining discount, and
 
 The computational objective is
 
-$$Q^{\ast}=\operatorname{Fix}(\mathcal{T}_{g}).$$
+$$Q^{\ast}=\mathrm{Fix}(\mathcal{T}_{g}).$$
 
 For a CTC learning environment, the coupled system is
 
